@@ -1,0 +1,63 @@
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+  <div class="page-header">
+    <h1>Edit Article</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="articleForm" class="form-horizontal" data-ng-submit="update()" novalidate>
+      <fieldset>
+        <div class="form-group">
+          <label class="control-label" for="title">Title</label>
+          <div class="controls">
+            <input name="title" type="text" data-ng-model="article.title" id="title" class="form-control" placeholder="Title" required>
+          </div>
+          <label class="control-label" for="type">Type</label>
+          <div class="controls">
+              <input type="text" data-ng-model="type" id="type" class="form-control" placeholder="Type">
+          </div>
+          <label class="control-label" for="description">Description</label>
+          <div class="controls">
+              <input type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description">
+          </div>
+          <label class="control-label" for="addr1">Address 1</label>
+          <div class="controls">
+              <input type="text" data-ng-model="addr1" id="addr1" class="form-control" placeholder="Address 1">
+          </div>
+          <label class="control-label" for="addr2">Address 2</label>
+          <div class="controls">
+              <input type="text" data-ng-model="addr2" id="addr2" class="form-control" placeholder="Address 2">
+          </div>
+          <label class="control-label" for="city">City</label>
+          <div class="controls">
+              <input type="text" data-ng-model="city" id="city" class="form-control" placeholder="City">
+          </div>
+          <label class="control-label" for="state">State</label>
+          <div class="controls">
+              <input type="text" data-ng-model="state" id="state" class="form-control" placeholder="State">
+          </div>
+          <label class="control-label" for="zip">Zip</label>
+          <div class="controls">
+              <input type="text" data-ng-model="zip" id="zip" class="form-control" placeholder="Zip">
+          </div>
+          <label class="control-label" for="contact">Contact</label>
+          <div class="controls">
+              <input type="text" data-ng-model="contact" id="contact" class="form-control" placeholder="Contact">
+          </div>
+          <label class="control-label" for="phone">Phone</label>
+          <div class="controls">
+              <input type="text" data-ng-model="phone" id="phone" class="form-control" placeholder="Phone">
+          </div>
+          <label class="control-label" for="points">Points</label>
+          <div class="controls">
+              <input type="text" data-ng-model="points" id="points" class="form-control" placeholder="Points">
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Update" class="btn btn-default">
+        </div>
+        <div data-ng-show="error" class="text-danger">
+          <strong data-ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

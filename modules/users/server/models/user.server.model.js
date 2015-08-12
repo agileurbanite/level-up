@@ -62,6 +62,24 @@ var UserSchema = new Schema({
     required: 'Please fill in a username',
     trim: true
   },
+  guild: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  description: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  points: {
+    type: Number,
+    default: 0
+  },
+  level: {
+    type: Number,
+    default: 1
+  },
   password: {
     type: String,
     default: '',
@@ -100,7 +118,8 @@ var UserSchema = new Schema({
   },
   resetPasswordExpires: {
     type: Date
-  }
+  },
+  quests: [{ type: Schema.ObjectId, ref: 'Quest'}]
 });
 
 /**

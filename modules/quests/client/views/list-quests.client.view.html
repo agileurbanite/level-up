@@ -1,0 +1,31 @@
+<section data-ng-controller="QuestsController" data-ng-init="find()">
+  <div class="page-header">
+    <h1>Quests</h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="quest in quests" data-ui-sref="quests.view({questId: quest._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="quest.created | date:'mediumDate'"></span>
+        by
+        <span data-ng-bind="quest.user.displayName"></span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="quest.title"></h4>
+      <ul>
+          <li data-ng-bind="quest.type"></li>
+          <li data-ng-bind="quest.description"></li>
+          <li data-ng-bind="quest.addr1"></li>
+          <li data-ng-bind="quest.addr2"></li>
+          <li data-ng-bind="quest.city"></li>
+          <li data-ng-bind="quest.state"></li>
+          <li data-ng-bind="quest.zip"></li>
+          <li data-ng-bind="quest.contact"></li>
+          <li data-ng-bind="quest.phone"></li>
+          <li data-ng-bind="quest.points"></li>
+      </ul>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="quests.$resolved && !quests.length">
+    No articles yet, why don't you <a data-ui-sref="quests.create">create one</a>?
+  </div>
+</section>
